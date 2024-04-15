@@ -7,35 +7,44 @@
             'description' => 'Hotel Belvedere Descrizione',
             'parking' => true,
             'vote' => 4,
-            'distance_to_center' => 10.4
+            'distance_to_center' => 10.4,
+            'img' => 'img/foto-1-.jpeg'
         ],
         [
             'name' => 'Hotel Futuro',
             'description' => 'Hotel Futuro Descrizione',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 2
+            'distance_to_center' => 2,
+            'img' => 'img/foto-2-.jpeg'
+
         ],
         [
             'name' => 'Hotel Rivamare',
             'description' => 'Hotel Rivamare Descrizione',
             'parking' => false,
             'vote' => 1,
-            'distance_to_center' => 1
+            'distance_to_center' => 1,
+            'img' => 'img/foto-3-.jpeg'
+
         ],
         [
             'name' => 'Hotel Bellavista',
             'description' => 'Hotel Bellavista Descrizione',
             'parking' => false,
             'vote' => 5,
-            'distance_to_center' => 5.5
+            'distance_to_center' => 5.5,
+            'img' => 'img/foto-4-.jpeg'
+
         ],
         [
             'name' => 'Hotel Milano',
             'description' => 'Hotel Milano Descrizione',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 50
+            'distance_to_center' => 50,
+            'img' => 'img/foto-5-.jpeg'
+
         ],
 
     ];
@@ -55,12 +64,16 @@
 </head>
 <body>
 
+<h1 class="text-center mb-5 mt-4 text-danger"> Gli Hotel più popolari</h1>
+
 <div class="container">
   <div class="row">
 
     <?php foreach ($hotels as $hotel): ?>
       <div class="col-md-4">
         <div class="card mb-4">
+          
+        <img src="<?php echo $hotel['img']; ?>" class="card-img-top" alt="<?php echo $hotel['name']; ?>">        
           <div class="card-body">
             <h5 class="card-title"><?php echo $hotel['name']; ?></h5>
             <p class="card-text"><?php echo $hotel['description']; ?></p>
@@ -80,3 +93,10 @@
 </body>
 </html>
 
+<style>
+
+    .card-img-top {
+      height: 240px; 
+      object-fit: cover; 
+    }
+  </style>
